@@ -10,11 +10,11 @@ const client_secret = "b9b06fe2969de295ca8afccf27ffabd673ed5c2a";
 const app = new Koa();
 
 const oauth = async ctx => {
-  // 获取返回的code
+  // 获取返回的code (授权码)
   const code = ctx.request.query.code;
   console.log("authorization code:", code);
 
-  // 获取access_token
+  // 获取access_token (令牌)
   const tokenResponse = await axios({
     method: "post",
     url: "https://github.com/login/oauth/access_token",
